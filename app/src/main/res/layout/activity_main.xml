@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/magneticTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_12dp"
+        android:layout_marginTop="@dimen/pad_12dp"
+        android:text="@string/magnetic_field_capitalize"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="0" />
+
+    <com.yy.mobile.rollingtextview.RollingTextView
+        android:id="@+id/magneticText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_12dp"
+        android:text="@string/magnetic_field_default"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/magneticTitleText"
+        android:layout_marginLeft="@dimen/pad_12dp" />
+
+    <TextView
+        android:id="@+id/directionTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_12dp"
+        android:layout_marginTop="@dimen/pad_12dp"
+        android:text="@string/direction_capitalize"
+        android:textColor="@color/colorAccent"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/magneticText"
+        android:layout_marginLeft="@dimen/pad_12dp" />
+
+    <TextView
+        android:id="@+id/directionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_12dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/directionTitleText"
+        android:layout_marginLeft="@dimen/pad_12dp" />
+
+    <ImageView
+        android:id="@+id/settingImage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/pad_12dp"
+        android:layout_marginEnd="@dimen/pad_12dp"
+        android:background="@drawable/icon_circle_state"
+        app:layout_constraintEnd_toStartOf="@+id/accuracyImage"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="@drawable/setting"
+        android:layout_marginRight="@dimen/pad_12dp" />
+
+    <ImageView
+        android:id="@+id/accuracyImage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/pad_12dp"
+        android:layout_marginEnd="@dimen/pad_12dp"
+        android:background="@drawable/icon_circle_state"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintTop_toTopOf="0"
+        app:srcCompat="@drawable/accuracy_good" />
+
+    <com.ktwapps.digitalcompass.Widget.ArcView
+        android:id="@+id/arcView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/compassImage"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/compassImage"
+        app:layout_constraintStart_toStartOf="@+id/compassImage"
+        app:layout_constraintTop_toTopOf="@+id/compassImage" />
+
+    <com.ktwapps.digitalcompass.Widget.SlopeView
+        android:id="@+id/slopeView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/compassImage"
+        app:layout_constraintEnd_toEndOf="@+id/compassImage"
+        app:layout_constraintStart_toStartOf="@+id/compassImage"
+        app:layout_constraintTop_toTopOf="@+id/compassImage" />
+
+    <com.ktwapps.digitalcompass.Widget.CompassView
+        android:id="@+id/compassImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/compass_pad"
+        android:layout_marginEnd="@dimen/compass_pad"
+        android:layout_marginBottom="@dimen/compass_pad"
+        app:layout_constraintBottom_toTopOf="@+id/headingText"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toBottomOf="@+id/magneticText"
+        app:srcCompat="@drawable/compass" />
+
+    <ImageView
+        android:id="@+id/compassPointerImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/compassImage"
+        app:layout_constraintEnd_toEndOf="@+id/compassImage"
+        app:layout_constraintStart_toStartOf="@+id/compassImage"
+        app:layout_constraintTop_toTopOf="@+id/compassImage"
+        app:srcCompat="@drawable/compass_pointer" />
+
+    <com.ktwapps.digitalcompass.Widget.CompassDirectionView
+        android:id="@+id/directionImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/compassImage"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/compassImage"
+        app:layout_constraintStart_toStartOf="@+id/compassImage"
+        app:layout_constraintTop_toTopOf="@+id/compassImage"
+        app:srcCompat="@drawable/direction_arrow" />
+
+    <TextView
+        android:id="@+id/headingText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_8dp"
+        android:layout_marginEnd="@dimen/pad_8dp"
+        android:layout_marginBottom="@dimen/pad_12dp"
+        android:text="@string/dash"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/coordinateText"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0" />
+
+    <SeekBar
+        android:id="@+id/directionSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_8dp"
+        android:layout_marginTop="@dimen/pad_8dp"
+        android:layout_marginEnd="@dimen/pad_8dp"
+        android:theme="@style/SeekBarTheme"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0"
+        app:layout_constraintTop_toTopOf="@+id/coordinateText" />
+
+    <TextView
+        android:id="@+id/gpsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_gps"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/directionSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/directionSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/coordinateText" />
+
+    <TextView
+        android:id="@+id/coordinateText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/pad_20dp"
+        android:text="@string/dash"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="@+id/directionSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/directionSeekBar" />
+
+    <ImageView
+        android:id="@+id/directionButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="@dimen/pad_12dp"
+        android:background="@drawable/icon_circle_state"
+        app:layout_constraintBottom_toBottomOf="@+id/headingText"
+        app:layout_constraintEnd_toEndOf="0"
+        app:srcCompat="@drawable/direction" />
+
+    <ImageView
+        android:id="@+id/headingImage"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/icon_circle_state"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/directionButton"
+        app:layout_constraintEnd_toStartOf="@+id/directionButton"
+        app:srcCompat="@drawable/true_heading" />
+
+    <ImageView
+        android:id="@+id/locationImage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/pad_12dp"
+        android:background="@drawable/icon_circle_state"
+        app:layout_constraintBottom_toBottomOf="@+id/directionButton"
+        app:layout_constraintStart_toStartOf="0"
+        app:srcCompat="@drawable/location" />
+
+    <ImageView
+        android:id="@+id/mapImage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/pad_12dp"
+        android:background="@drawable/icon_circle_state"
+        app:layout_constraintBottom_toBottomOf="@+id/directionButton"
+        app:layout_constraintStart_toEndOf="@+id/locationImage"
+        app:srcCompat="@drawable/map" />
+
+    <FrameLayout
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="0"
+        app:layout_constraintEnd_toEndOf="0"
+        app:layout_constraintStart_toStartOf="0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

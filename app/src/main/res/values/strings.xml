@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">compass</string>
+    <string name="n">N</string>
+    <string name="s">S</string>
+    <string name="e">E</string>
+    <string name="w">W</string>
+    <string name="nw">NW</string>
+    <string name="sw">SW</string>
+    <string name="se">SE</string>
+    <string name="ne">NE</string>
+    <string name="dash">-</string>
+    <string name="search_gps">search GPS</string>
+    <string name="direction_capitalize">DIRECTION</string>
+    <string name="magnetic_field_default">0µT</string>
+    <string name="magnetic_field_capitalize">MAGNETIC FIELD</string>
+</resources>

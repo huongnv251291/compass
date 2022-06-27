@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pad_12dp">12dp</dimen>
+    <dimen name="icon_stroke">1dp</dimen>
+    <dimen name="pad_20dp">20dp</dimen>
+    <dimen name="pad_8dp">8dp</dimen>
+    <dimen name="compass_pad">8dp</dimen>
+
+</resources>
